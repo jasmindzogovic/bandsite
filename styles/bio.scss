@@ -1,0 +1,153 @@
+@use "./partials/mixin" as *;
+@use "./partials/variables" as *;
+@use "./partials/global" as *;
+
+/*Styling hero section, and adjusting the background image with a darker overlay--Making responsive*/
+
+.hero {
+    background: no-repeat center url(../assets/Images/hero-bio.jpg);
+    background-size: cover;
+    &--overlay {
+        background-color: rgba(50, 50, 50, 0.5);
+    }
+    &__heading {
+        color: $white;
+        padding: 5rem 1rem;
+    }
+    @include tablet {
+        .hero__heading {
+            padding: 13rem 2.25rem;
+        }
+    }
+    @include desktop {
+        .hero__heading {
+            padding: 20rem 8rem;
+        }
+    }
+}
+
+/*Styling main section background and font color, adjusting image and header padding--Making responsive*/
+
+.main {
+    background-color: $white;
+    color: $bandsite-darkblack;
+    &__heading {
+        @include mobile-header-padding;
+    }
+    @include tablet {
+        .main__heading {
+            padding: 3rem 2.25rem 2rem;
+        }
+    }
+    @include desktop {
+        .main__heading {
+            padding-left: 8rem;
+        }
+    }
+}
+
+/*Adding padding to main container elements, adjusting image--Making responsive*/
+
+.main__container {
+    padding: 1rem;
+    &-img {
+        width: 100%;
+    }
+    &-subheading {
+        @include flex-justify;
+        text-align: start;
+        padding-bottom: 0.3rem;
+    }
+    &-singer {
+        padding-bottom: 1rem;
+    }
+    &-band {
+        padding-bottom: 0.875rem;
+    }
+    &-paragraph {
+        font-size: 0.875rem;
+        text-align: justify;
+    }
+    .first {
+        padding-bottom: 1rem;
+    }
+    @include tablet {
+        padding: 2.25rem 5rem;
+        .main__container {
+            &-img {
+            display: block;
+            margin: 0 auto;
+            padding-bottom: 2.25rem;
+            }
+            &-subheading {
+            font-size: 1.3rem;
+            padding-bottom: 1rem;
+            justify-content: flex-start;
+            }
+            &-singer {
+            font-size: 1rem;
+            }
+            &-band {
+            font-size: 1.5rem;
+            padding: 2.25rem 0;
+            }
+            &-story {
+            display: flex;
+            justify-content: flex-start;
+            }
+            &-paragraph {
+            line-height: 1.3rem;
+            }
+        }
+        .first {
+            padding-right: 1.5rem;
+            }
+    }
+    @include desktop {
+        padding: 2.25rem 10rem;
+        .main__container-paragraph {
+            font-size: 1rem;
+            line-height: 1.5rem; 
+        }
+    }
+}
+
+/*Setting background color, adding padding to elements, and adjusting images of photo gallery*/
+
+.photo-gallery {
+    background-color: $mercury;
+    &__container {
+        padding: 1rem
+    }
+    &__heading {
+       padding-bottom: 1rem;
+    }
+    &__image {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    @include tablet {
+        .photo-gallery {
+            &__container {
+                padding: 3rem;
+            }
+            &__images-container {
+                @include flex-justify; 
+                flex-wrap: wrap;     
+            }
+            &__image {
+                width: 30%;
+                margin: 0.65rem;
+            }
+        }
+    }
+    @include desktop {
+        .photo-gallery {
+            &__container {
+                padding: 2rem 10rem 1rem 10rem;
+            }
+        }
+    }
+}
+
+
